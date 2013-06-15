@@ -1,7 +1,10 @@
-angular.module('giantBombApiApp')
+angular.module('yeomanModern')
   .controller 'MainCtrl', ($scope) ->
-    $scope.awesomeThings = [
+    $scope.reallyAwesomeThings = [
       'HTML5 Boilerplate'
       'AngularJS'
       'Karma'
+      'CoffeeScript'
+      'Jade'
+      'Stylus'
     ]

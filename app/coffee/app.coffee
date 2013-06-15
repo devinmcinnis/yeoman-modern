@@ -1,4 +1,4 @@
-angular.module('giantBombApiApp', [])
+angular.module('yeomanModern', [])
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
