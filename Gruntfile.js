@@ -156,20 +156,20 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          
+
           // styl is the directory where you store your stylus files - app/styl/**/*.styl
           cwd: '<%= yeoman.app %>/styl',
-          
+
           // This will compile ONLY your main.styl file
           // Make sure to @import your partials
           src: 'main.styl',
-          
+
           // This will compile every individual file from the styl/ directory to styles/
           // src: '{,*/}*.styl',
-          
+
           // The destination folder for your .css files - app/styles/*.css
-          dest: '<%= yeoman.app %>/styles',
-          
+          dest: '.tmp/styles',
+
           ext: '.css'
         }]
       }
