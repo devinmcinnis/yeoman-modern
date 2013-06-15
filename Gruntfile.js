@@ -299,6 +299,7 @@ module.exports = function (grunt) {
     'clean:server',
     'coffee:dist',
     'jade',
+    'stylus',
     'livereload-start',
     'connect:livereload',
     'open',
@@ -309,6 +310,7 @@ module.exports = function (grunt) {
     'clean:server',
     'coffee',
     'jade',
+    'stylus',
     'connect:test',
     'karma'
   ]);
@@ -319,6 +321,7 @@ module.exports = function (grunt) {
     'test',
     'coffee',
     'jade',
+    'stylus',
     'useminPrepare',
     'imagemin',
     'cssmin',
