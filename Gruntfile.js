@@ -8,6 +8,8 @@ module.exports = function (grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
+  grunt.loadNpmTasks('grunt-contrib-stylus');
+
   // configurable paths
   var yeomanConfig = {
     app: 'app',
@@ -32,6 +34,12 @@ module.exports = function (grunt) {
       jade: {
         files: ['<% yeoman.app %>/*.jade'],
         tasks: ['jade']
+      },
+      stylus: {
+        files: [
+          '<%= yeoman.app %>/styl/{,*/}*.styl'
+        ],
+        tasks: ['stylus']
       },
       livereload: {
         files: [
@@ -135,6 +143,33 @@ module.exports = function (grunt) {
           dest: '.tmp',
           src: '*.jade',
           ext: '.html'
+        }]
+      }
+    },
+    stylus: {
+      compile: {
+        options: {
+          // Do minify
+          compress: true,
+          paths: ['node_modules/grunt-contrib-stylus/node_modules']
+        },
+        files: [{
+          expand: true,
+          
+          // styl is the directory where you store your stylus files - app/styl/**/*.styl
+          cwd: '<%= yeoman.app %>/styl',
+          
+          // This will compile ONLY your main.styl file
+          // Make sure to @import your partials
+          src: 'main.styl',
+          
+          // This will compile every individual file from the styl/ directory to styles/
+          // src: '{,*/}*.styl',
+          
+          // The destination folder for your .css files - app/styles/*.css
+          dest: '<%= yeoman.app %>/styles',
+          
+          ext: '.css'
         }]
       }
     },
