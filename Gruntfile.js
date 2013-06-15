@@ -8,6 +8,7 @@ module.exports = function (grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
+  grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-stylus');
 
   // configurable paths
@@ -24,7 +25,7 @@ module.exports = function (grunt) {
     yeoman: yeomanConfig,
     watch: {
       coffee: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
+        files: ['<%= yeoman.app %>/coffee/{,*/}*.coffee'],
         tasks: ['coffee:dist']
       },
       coffeeTest: {
@@ -32,7 +33,7 @@ module.exports = function (grunt) {
         tasks: ['coffee:test']
       },
       jade: {
-        files: ['<% yeoman.app %>/*.jade'],
+        files: ['<%= yeoman.app %>/{,*/}*.jade'],
         tasks: ['jade']
       },
       stylus: {
@@ -116,7 +117,7 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= yeoman.app %>/scripts',
+          cwd: '<%= yeoman.app %>/coffee',
           src: '{,*/}*.coffee',
           dest: '.tmp/scripts',
           ext: '.js'
